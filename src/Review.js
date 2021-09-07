@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import data from './data'
 import { FaQuoteRight, FaChevronLeft, FaChevronRight } from 'react-icons/fa'
 export default function Review() {

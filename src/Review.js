@@ -33,6 +33,26 @@ export default function Review() {
 
     }
 
+    //helper to get random num
+    const getRandomNum = () => {
+        // get range in which we can set our person in this case from 0 to 3
+        let randomNum = Math.floor(Math.random() * peopleArr.length);
+
+        return randomNum;
+    }
+
+    //random person
+    const randomPerson = () => {
+        //get random number
+        let randomNum = getRandomNum();
+        //if random value equals our current value, call random function again to evalute new random value
+        while (randomNum === value) {
+            randomNum = getRandomNum();
+        }
+        //then set value and we will show random person on rerender
+        setValue(randomNum);
+    }
+
 
 
     //create person to show on the page
@@ -57,7 +77,7 @@ export default function Review() {
                     <FaChevronRight />
                 </button>
             </div >
-            <button className="random-btn">surprise me</button>
+            <button onClick={randomPerson} className="random-btn">surprise me</button>
         </article >
     )
 
